@@ -26,7 +26,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Santa Fe',
 			'population' => '1',
-			'category_size' => 'capital',
+			'category_size' => 'outpost',
 			'foundation' => '1610',
 			'natives' => 'Pueblo',
 			'xcoord' => '1',
@@ -36,7 +36,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Alburquerque',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1706',
 			'natives' => 'Apache',
 			'xcoord' => '1',
@@ -47,7 +47,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'El Paso',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1659',
 			'natives' => 'Commanche',
 			'xcoord' => '1',
@@ -57,7 +57,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Austin',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'buffalo',
 			'foundation' => '1835',
 			'natives' => 'Comanche',
 			'xcoord' => '1',
@@ -67,9 +67,9 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Dallas',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'buffalo',
 			'foundation' => '1856',
-			'natives' => 'Comanche',
+			'natives' => 'Caddo',
 			'xcoord' => '1',
 			'ycoord' => '1'
 		]);
@@ -87,7 +87,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Houston',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'port',
 			'foundation' => '1837',
 			'natives' => 'Karankawa',
 			'xcoord' => '1',
@@ -97,7 +97,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'San Antonio',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'mission',
 			'foundation' => '1',
 			'natives' => 'Payaya',
 			'xcoord' => '1',
@@ -108,7 +108,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Denver',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'mining',
 			'foundation' => '1858',
 			'natives' => 'Cheyenne',
 			'xcoord' => '1',
@@ -118,7 +118,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Colorado Springs',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'mining',
 			'foundation' => '1886',
 			'natives' => 'Cheyenne',
 			'xcoord' => '1',
@@ -126,9 +126,9 @@ class TownSeeder extends Seeder
 		]);
 		//11
 		DB::table('towns')->insert([
-			'town_name' => 'Pueblo',
+			'town_name' => 'Fort Pueblo',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'fort',
 			'foundation' => '1',
 			'natives' => 'Cheyenne',
 			'xcoord' => '1',
@@ -139,7 +139,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Oklahoma',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1889',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -150,7 +150,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Wichita',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1868',
 			'natives' => 'Wichita',
 			'xcoord' => '1',
@@ -160,7 +160,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Kansas',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1872',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -181,7 +181,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Lancaster',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'buffalo',
 			'foundation' => '1856',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -192,7 +192,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Rapid City',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'mining',
 			'foundation' => '1876',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -213,7 +213,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Edwinton',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1872',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -223,7 +223,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Fargo',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1871',
 			'natives' => 'Sioux',
 			'xcoord' => '1',
@@ -234,7 +234,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Billings',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1877',
 			'natives' => 'Crow',
 			'xcoord' => '1',
@@ -244,7 +244,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Bozeman',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1864',
 			'natives' => 'Crow',
 			'xcoord' => '1',
@@ -265,7 +265,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Idaho Falls',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1864',
 			'natives' => 'Shoshone',
 			'xcoord' => '1',
@@ -307,7 +307,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Salt Lake City',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'mining',
 			'foundation' => '1847',
 			'natives' => 'Shoshone',
 			'xcoord' => '1',
@@ -318,7 +318,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Phoenix',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'stockyard',
 			'foundation' => '1867',
 			'natives' => 'Navajo',
 			'xcoord' => '1',
