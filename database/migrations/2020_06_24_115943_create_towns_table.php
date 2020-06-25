@@ -23,7 +23,7 @@ class CreateTownsTable extends Migration
 			//foundation
 			$table->integer('foundation');
 			//natives
-			$table->integer('natives');
+			$table->string('natives');
 			//location
 			$table->integer('xcoord');
 			$table->integer('ycoord');

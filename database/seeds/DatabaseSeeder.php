@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,9 +16,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         //towns seeds
+        //foreign keys
+		$this->call('ForeignKeySeeder');
+		//towns seeds
         $this->call('TownSeeder');
+		//towns seeds
+        $this->call('BuildingTypeSeeder');
     }
+}
+
+//foreign keys
+class ForeignKeySeeder extends Seeder
+{
+    public function run()
+    {
+        //buildings fk
+		Schema::table('buildings', function (Blueprint $table) {
+			$table->foreign('type')->references('building_type_id')->on('building_types');
+            $table->foreign('town')->references('town_id')->on('towns');
+        });	
+	}
 }
 
 class TownSeeder extends Seeder
@@ -129,7 +151,7 @@ class TownSeeder extends Seeder
 			'town_name' => 'Fort Pueblo',
 			'population' => '1',
 			'category_size' => 'fort',
-			'foundation' => '1',
+			'foundation' => '1842',
 			'natives' => 'Cheyenne',
 			'xcoord' => '1',
 			'ycoord' => '1'
@@ -339,7 +361,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Reno',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1868',
 			'natives' => 'Paiute',
 			'xcoord' => '1',
@@ -350,7 +372,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Spokane',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1873',
 			'natives' => 'Spokane',
 			'xcoord' => '1',
@@ -360,7 +382,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Seattle',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'lumber',
 			'foundation' => '1851',
 			'natives' => 'Duwamish',
 			'xcoord' => '1',
@@ -371,7 +393,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Portland',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'port',
 			'foundation' => '1845',
 			'natives' => 'Chinook',
 			'xcoord' => '1',
@@ -381,7 +403,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Eugene',
 			'population' => '1846',
-			'category_size' => 'small',
+			'category_size' => 'outpost',
 			'foundation' => '1',
 			'natives' => 'Kalapuya',
 			'xcoord' => '1',
@@ -392,7 +414,7 @@ class TownSeeder extends Seeder
 		DB::table('towns')->insert([
 			'town_name' => 'Fort Sutter',
 			'population' => '1',
-			'category_size' => 'small',
+			'category_size' => 'fort',
 			'foundation' => '1839',
 			'natives' => 'Maidu',
 			'xcoord' => '1',
@@ -438,6 +460,338 @@ class TownSeeder extends Seeder
 			'xcoord' => '1',
 			'ycoord' => '1'
 		]);
+		//louisiana
+		//41
+		DB::table('towns')->insert([
+			'town_name' => 'New Orleans',
+			'population' => '1',
+			'category_size' => 'port',
+			'foundation' => '1718',
+			'natives' => 'Natchez',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);		
+		//42
+		DB::table('towns')->insert([
+			'town_name' => 'Shreveport',
+			'population' => '1',
+			'category_size' => 'port',
+			'foundation' => '1836',
+			'natives' => 'Caddo',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+		//arkansas
+		//43
+		DB::table('towns')->insert([
+			'town_name' => 'Fayetteville',
+			'population' => '1',
+			'category_size' => 'outpost',
+			'foundation' => '1828',
+			'natives' => 'Sioux',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+		//44
+		DB::table('towns')->insert([
+			'town_name' => 'Little Rock',
+			'population' => '1',
+			'category_size' => 'outpost',
+			'foundation' => '1821',
+			'natives' => 'Caddo',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);			
+		//missouri
+		//45
+		DB::table('towns')->insert([
+			'town_name' => 'Saint Louis',
+			'population' => '1',
+			'category_size' => 'port',
+			'foundation' => '1764',
+			'natives' => 'Sioux',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+		//46
+		DB::table('towns')->insert([
+			'town_name' => 'Columbia',
+			'population' => '1',
+			'category_size' => 'outpost',
+			'foundation' => '1818',
+			'natives' => 'Sioux',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+		//47
+		DB::table('towns')->insert([
+			'town_name' => 'Springfield',
+			'population' => '1',
+			'category_size' => 'outpost',
+			'foundation' => '1834',
+			'natives' => 'Sioux',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);		
+		//iowa
+		//48
+		DB::table('towns')->insert([
+			'town_name' => 'Fort Des Moines',
+			'population' => '1',
+			'category_size' => 'fort',
+			'foundation' => '1843',
+			'natives' => 'Algonquin',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+		//49
+		DB::table('towns')->insert([
+			'town_name' => 'Cedar Rapids',
+			'population' => '1',
+			'category_size' => 'stockyard',
+			'foundation' => '1849',
+			'natives' => 'Algonquin',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);			
+		//minnesota
+		//50
+		DB::table('towns')->insert([
+			'town_name' => 'Minneapolis',
+			'population' => '1',
+			'category_size' => 'lumber',
+			'foundation' => '1867',
+			'natives' => 'Sioux',
+			'xcoord' => '1',
+			'ycoord' => '1'
+		]);	
+	}
+}
 
+class BuildingTypeSeeder extends Seeder
+{	
+	//towns
+    public function run()
+    {
+		//transport
+		//1
+		DB::table('building_types')->insert([
+			'type_name' => 'railroad station',
+			'category' => 'transport'
+		]);
+		//2
+		DB::table('building_types')->insert([
+			'type_name' => 'stagecoach station',
+			'category' => 'transport'
+		]);
+		//3
+		DB::table('building_types')->insert([
+			'type_name' => 'livery stables',
+			'category' => 'transport'
+		]);	
+		//4
+		DB::table('building_types')->insert([
+			'type_name' => 'post office',
+			'category' => 'transport'
+		]);
+		//5
+		DB::table('building_types')->insert([
+			'type_name' => 'telegraph office',
+			'category' => 'transport'
+		]);
+		//6
+		DB::table('building_types')->insert([
+			'type_name' => 'newspaper',
+			'category' => 'transport'
+		]);
+		//security
+		//7
+		DB::table('building_types')->insert([
+			'type_name' => 'fort',
+			'category' => 'security'
+		]);
+		//8
+		DB::table('building_types')->insert([
+			'type_name' => 'sheriff office',
+			'category' => 'security'
+		]);
+		//9
+		DB::table('building_types')->insert([
+			'type_name' => 'marshall office',
+			'category' => 'security'
+		]);
+		//10
+		DB::table('building_types')->insert([
+			'type_name' => 'jail',
+			'category' => 'security'
+		]);
+		//11
+		DB::table('building_types')->insert([
+			'type_name' => 'firehouse',
+			'category' => 'security'
+		]);
+		//12
+		DB::table('building_types')->insert([
+			'type_name' => 'court',
+			'category' => 'security'
+		]);
+		//commerce
+		//13
+		DB::table('building_types')->insert([
+			'type_name' => 'feed store',
+			'category' => 'commerce'
+		]);
+		//14
+		DB::table('building_types')->insert([
+			'type_name' => 'general store',
+			'category' => 'commerce'
+		]);
+		//15
+		DB::table('building_types')->insert([
+			'type_name' => 'dry goods store',
+			'category' => 'commerce'
+		]);
+		//16
+		DB::table('building_types')->insert([
+			'type_name' => 'tailor',
+			'category' => 'commerce'
+		]);		
+		//17
+		DB::table('building_types')->insert([
+			'type_name' => 'blacksmith',
+			'category' => 'commerce'
+		]);
+		//18
+		DB::table('building_types')->insert([
+			'type_name' => 'gunsmith',
+			'category' => 'commerce'
+		]);
+		//19
+		DB::table('building_types')->insert([
+			'type_name' => 'assay office',
+			'category' => 'commerce'
+		]);
+		//20
+		DB::table('building_types')->insert([
+			'type_name' => 'bank',
+			'category' => 'commerce'
+		]);
+		//industry
+		//21
+		DB::table('building_types')->insert([
+			'type_name' => 'icehouse',
+			'category' => 'industry'
+		]);
+		//22
+		DB::table('building_types')->insert([
+			'type_name' => 'stockyard',
+			'category' => 'industry'
+		]);
+		//23
+		DB::table('building_types')->insert([
+			'type_name' => 'abattoir',
+			'category' => 'industry'
+		]);
+		//health
+		//24
+		DB::table('building_types')->insert([
+			'type_name' => 'barber shop',
+			'category' => 'health'
+		]);
+		//25
+		DB::table('building_types')->insert([
+			'type_name' => 'bath house',
+			'category' => 'health'
+		]);
+		//26
+		DB::table('building_types')->insert([
+			'type_name' => 'laundry',
+			'category' => 'health'
+		]);
+		//27
+		DB::table('building_types')->insert([
+			'type_name' => 'doctor',
+			'category' => 'health'
+		]);
+		//religious
+		//28
+		DB::table('building_types')->insert([
+			'type_name' => 'church',
+			'category' => 'religious'
+		]);
+		//29
+		DB::table('building_types')->insert([
+			'type_name' => 'funeral store',
+			'category' => 'religious'
+		]);
+		//education
+		//30
+		DB::table('building_types')->insert([
+			'type_name' => 'school',
+			'category' => 'education'
+		]);
+		//31
+		DB::table('building_types')->insert([
+			'type_name' => 'college',
+			'category' => 'education'
+		]);
+		//entertainment
+		//32
+		DB::table('building_types')->insert([
+			'type_name' => 'saloon',
+			'category' => 'entertainment'
+		]);
+		//33
+		DB::table('building_types')->insert([
+			'type_name' => 'dance hall',
+			'category' => 'entertainment'
+		]);
+		//34
+		DB::table('building_types')->insert([
+			'type_name' => 'hotel',
+			'category' => 'entertainment'
+		]);
+		//resources
+		//35
+		DB::table('building_types')->insert([
+			'type_name' => 'mine',
+			'category' => 'resources'
+		]);
+		//36
+		DB::table('building_types')->insert([
+			'type_name' => 'trapper',
+			'category' => 'resources'
+		]);
+		//37
+		DB::table('building_types')->insert([
+			'type_name' => 'sawmill',
+			'category' => 'resources'
+		]);
+		//farming
+		//38
+		DB::table('building_types')->insert([
+			'type_name' => 'farm',
+			'category' => 'farming'
+		]);
+		//39
+		DB::table('building_types')->insert([
+			'type_name' => 'plantation',
+			'category' => 'farming'
+		]);
+		//40
+		DB::table('building_types')->insert([
+			'type_name' => 'ranch',
+			'category' => 'farming'
+		]);	
+		//41
+		DB::table('building_types')->insert([
+			'type_name' => 'mill',
+			'category' => 'farming'
+		]);	
+		//42
+		DB::table('building_types')->insert([
+			'type_name' => 'water tower',
+			'category' => 'farming'
+		]);			
 	}
 }

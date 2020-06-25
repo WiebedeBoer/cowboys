@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
 //models
 use App\Town;
+use app\Building;
 
 class TownController extends Controller
 {

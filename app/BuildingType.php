@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Town extends Model
+class BuildingType extends Model
 {
     //towns table
-    protected $table = 'towns';
-    protected $primaryKey = 'town_id';
+    protected $table = 'building_types';
+    protected $primaryKey = 'building_type_id';
 	
 	//buildings
     public function buildings()
